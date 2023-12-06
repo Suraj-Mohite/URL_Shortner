@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Register | URLShortner
+{% endblock title %}
+
+{% block content %}
+<div class="mt-4">
+    <div class="card container mt-5 shadow text-center col-md-4">
+        <h1 class="pt-2">Register</h1>
+        <hr>
+        <div class="text-danger" id="register-error-message"></div>
+        <div class="px-3">
+            {% csrf_token %}
+            <input type="text" class="form-control my-3" id="username" placeholder="Username" required>
+            <input type="email" class="form-control my-3" id="user-email" placeholder="Email" required>
+            <input type="password" class="form-control my-3" id="password" placeholder="Password" required>
+            <input type="password" class="form-control my-3" id="confirm-password" placeholder="Re-enter Password" required>
+            <div class="text-left">
+                <span>Already have an account? </span><a class="text-decoration-none" href="{% url 'login' %}">Click here</a>
+            </div>
+            <button class="btn-lg btn-outline-primary my-3" onclick="userRegister()">Submit</button>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'Accounts/js/auth.js' %}"></script>
+{% endblock content %}

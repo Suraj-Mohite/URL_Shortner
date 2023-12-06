@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+<h1>{{request.user.username}}</h1>
+{% else %}
+<h1>done</h1>
+{% endif %}
+{% endblock content %}

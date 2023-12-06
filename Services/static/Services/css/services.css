@@ -1,0 +1,9 @@
+.dashboard-main-section{
+    background-color: gainsboro; 
+    padding-top: 5rem; 
+    padding-bottom: 5rem;
+}
+
+.table-tr > td th{
+    border-top: none;
+}

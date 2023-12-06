@@ -1,0 +1,31 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Login | URLShortner
+{% endblock title %}
+
+{% block content %}
+<div class="mt-4">
+    <div class="card container mt-5 shadow text-center col-md-4">
+        <h1 class="pt-2">Login</h1>
+        <hr>
+        <div class="text-danger" id="login-error-message"></div>
+        <div class="px-3">
+            {% csrf_token %}
+            <input type="text" id = "user_name" class="form-control my-3" placeholder="Username">
+            <input type="password" id = "user_password" class="form-control my-3" placeholder="Password">
+            <div class="text-left">
+                <a class="text-decoration-none" href="">Forgot Password</a>
+            </div>
+            <div class="text-left">
+                <span>Don't have an account? </span><a class="text-decoration-none" href="{% url 'register' %}">Click here</a>
+            </div>
+            <button type="button" onclick="userLogin()" class="btn-lg btn-outline-primary my-3">Submit</button>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'Accounts/js/auth.js' %}"></script>
+{% endblock content %}
